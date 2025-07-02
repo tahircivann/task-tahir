@@ -1,3 +1,5 @@
+import '../styles/main.scss';
+
 // Event Tracker Class
 class EventTracker {
     constructor() {
