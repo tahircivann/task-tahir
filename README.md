@@ -254,6 +254,29 @@ MIT License - feel free to use this code for learning and commercial projects.
 4. Test across different devices
 5. Submit a pull request
 
+## 🧪 How to Test Everything
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+2. **Copy assets to the correct location:**
+   - If you keep assets in `src/assets/`, copy them to `dist/assets/` after each build:
+     ```bash
+     cp -R src/assets dist/assets
+     ```
+3. **Serve the app:**
+   ```bash
+   npx serve .
+   ```
+   or
+   ```bash
+   npm run serve
+   ```
+4. **Open in browser:**
+   - Go to `http://localhost:8080`
+   - Check that all images and video load, and all scenes and interactions work.
+
 ---
 
 **Built with ❤️ for modern mobile web experiences** 

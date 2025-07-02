@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Showcase - Mobile Ad</title>
+    <title>Product Showcase - Complete Demo</title>
     <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
 </head>
 <body>
+    <!-- Orientation Lock Warning -->
     <div id="orientation-warning" class="orientation-warning">
         <div class="orientation-content">
             <h2>Please rotate your device</h2>
@@ -15,7 +17,9 @@
         </div>
     </div>
 
+    <!-- Main Application Container -->
     <div id="app" class="app-container">
+        <!-- Scene 1: Intro -->
         <section id="scene-intro" class="scene scene-intro active">
             <div class="intro-content">
                 <img src="src/assets/headline.png" alt="Product Headline" class="headline-image">
@@ -29,10 +33,11 @@
             </div>
         </section>
 
+        <!-- Scene 2: Gallery -->
         <section id="scene-gallery" class="scene scene-gallery">
             <div class="gallery-content">
                 <img src="src/assets/headline.png" alt="Product Headline" class="headline-image">
-                
+                <!-- Swiper Gallery -->
                 <div class="swiper gallery-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" data-slide="1">
@@ -49,8 +54,9 @@
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-
                 <!-- CTA Button -->
                 <button id="cta-button" class="cta-button">
                     <img src="src/assets/cta.png" alt="Call to Action">
@@ -58,13 +64,13 @@
             </div>
         </section>
 
+        <!-- Scene 3: Video -->
         <section id="scene-video" class="scene scene-video">
             <div class="video-content">
                 <video id="product-video" class="product-video" loop muted>
                     <source src="src/assets/video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                
                 <button id="back-button" class="back-button">
                     ← Back to Gallery
                 </button>
@@ -72,8 +78,9 @@
         </section>
     </div>
 
+    <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <script src="dist/bundle.js"></script>
 </body>
-</html> 
+</html>

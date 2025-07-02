@@ -1,10 +1,8 @@
-// Import Sass color module for modern color functions
-@use "sass:color";
-
 // Variables
 $primary-color: #000;
 $secondary-color: #fff;
 $accent-color: #ff6b35;
+$accent-color-dark: #e55a2b; // Pre-calculated darker version
 $transition-duration: 0.3s;
 $border-radius: 8px;
 
@@ -33,7 +31,10 @@ html, body {
     height: 100%;
     overflow: hidden;
     font-family: 'Arial', sans-serif;
-    background: url('../src/assets/bg.jpg') center/cover no-repeat;
+    background: 
+        linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1), transparent),
+        linear-gradient(45deg, #2c3e50, #34495e, #95a5a6);
     position: relative;
 }
 
@@ -183,6 +184,11 @@ html, body {
             @include flex-center;
             cursor: pointer;
             transition: transform $transition-duration;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
             
             &:hover {
                 transform: scale(1.05);
@@ -193,6 +199,30 @@ html, body {
                 max-height: 100%;
                 object-fit: contain;
                 filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+                border-radius: 10px;
+            }
+        }
+        
+        // Swiper Navigation Buttons
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: $secondary-color;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all $transition-duration;
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(1.1);
+            }
+            
+            &::after {
+                font-size: 16px;
+                font-weight: bold;
             }
         }
         
@@ -202,10 +232,15 @@ html, body {
             .swiper-pagination-bullet {
                 background: $secondary-color;
                 opacity: 0.5;
+                width: 12px;
+                height: 12px;
+                margin: 0 6px;
+                transition: all $transition-duration;
                 
                 &.swiper-pagination-bullet-active {
                     opacity: 1;
                     background: $accent-color;
+                    transform: scale(1.2);
                 }
             }
         }
@@ -259,6 +294,7 @@ html, body {
             border-radius: $border-radius;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
             transition: all $transition-duration;
+            object-fit: cover;
             
             // Dynamic positioning classes
             &.position-top-left {
@@ -301,7 +337,7 @@ html, body {
             transition: all $transition-duration;
             
             &:hover {
-                background: color.adjust($accent-color, $lightness: -10%);
+                background: $accent-color-dark;
                 transform: translateX(-50%) scale(1.05);
             }
         }

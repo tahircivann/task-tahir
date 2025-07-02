@@ -20,12 +20,18 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
+      },
+      {
+        test: /\.mp4$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
       }
     ]
   },
@@ -35,5 +41,14 @@ module.exports = {
   optimization: {
     minimize: true
   },
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 1000000, // 1MB - increased for video files
+    maxEntrypointSize: 1000000,
+    assetFilter: function(assetFilename) {
+      // Don't show warnings for video files
+      return !assetFilename.endsWith('.mp4');
+    }
+  },
   devtool: 'source-map'
-}; 
+};
