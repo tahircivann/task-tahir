@@ -1,3 +1,6 @@
+// Import Sass color module for modern color functions
+@use "sass:color";
+
 // Variables
 $primary-color: #000;
 $secondary-color: #fff;
@@ -30,7 +33,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     font-family: 'Arial', sans-serif;
-    background: url('assets/bg.jpg') center/cover no-repeat;
+    background: url('../assets/bg.jpg') center/cover no-repeat;
     position: relative;
 }
 
@@ -298,7 +301,7 @@ html, body {
             transition: all $transition-duration;
             
             &:hover {
-                background: darken($accent-color, 10%);
+                background: color.adjust($accent-color, $lightness: -10%);
                 transform: translateX(-50%) scale(1.05);
             }
         }
@@ -353,4 +356,4 @@ html, body {
     opacity: 0;
     transform: translateY(-50px);
     transition: all 0.5s ease-in;
-} 
+}
