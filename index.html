@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase - Mobile Ad</title>
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+    <div id="orientation-warning" class="orientation-warning">
+        <div class="orientation-content">
+            <h2>Please rotate your device</h2>
+            <p>This experience is optimized for portrait orientation</p>
+            <div class="rotate-icon">📱</div>
+        </div>
+    </div>
+
+    <div id="app" class="app-container">
+        <section id="scene-intro" class="scene scene-intro active">
+            <div class="intro-content">
+                <img src="assets/headline.png" alt="Product Headline" class="headline-image">
+                <div class="intro-animation">
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scene-gallery" class="scene scene-gallery">
+            <div class="gallery-content">
+                <img src="assets/headline.png" alt="Product Headline" class="headline-image">
+                
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-slide="1">
+                            <img src="assets/shoe1.png" alt="Product 1">
+                        </div>
+                        <div class="swiper-slide" data-slide="2">
+                            <img src="assets/shoe2.png" alt="Product 2">
+                        </div>
+                        <div class="swiper-slide" data-slide="3">
+                            <img src="assets/shoe3.png" alt="Product 3">
+                        </div>
+                        <div class="swiper-slide" data-slide="4">
+                            <img src="assets/shoe4.png" alt="Product 4">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- CTA Button -->
+                <button id="cta-button" class="cta-button">
+                    <img src="assets/cta.png" alt="Call to Action">
+                </button>
+            </div>
+        </section>
+
+        <section id="scene-video" class="scene scene-video">
+            <div class="video-content">
+                <video id="product-video" class="product-video" loop muted>
+                    <source src="assets/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <button id="back-button" class="back-button">
+                    ← Back to Gallery
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="dist/bundle.js"></script>
+</body>
+</html> 
